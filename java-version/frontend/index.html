@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marvel Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-loading">
+
+<header class="top">
+  <div class="brand">MARVEL<span>TRACKER</span></div>
+
+  <!-- Avengers: Doomsday countdown (target date is set in js/app.js) -->
+  <div class="countdown" id="countdown" role="timer" aria-label="Time until Avengers: Doomsday">
+    <div class="cd-title" id="cdTitle">DOOMSDAY IS COMING</div>
+    <div class="cd-units" id="cdUnits">
+      <div class="cd-unit"><span class="cd-num" id="cdMonths">00</span><span class="cd-lbl">MONTHS</span></div><span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cdDays">00</span><span class="cd-lbl">DAYS</span></div><span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cdHours">00</span><span class="cd-lbl">HOURS</span></div><span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cdMinutes">00</span><span class="cd-lbl">MINUTES</span></div><span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cdSeconds">00</span><span class="cd-lbl">SECONDS</span></div>
+    </div>
+  </div>
+
+  <div class="who">
+    <!-- shown before login -->
+    <div class="who-out">
+      <button class="btn-ghost" id="hdrLogin" type="button">Log in</button>
+      <button class="btn-solid" id="hdrSignup" type="button">Sign up</button>
+    </div>
+    <!-- shown after login -->
+    <details class="usermenu who-in" id="userMenu">
+      <summary><span id="meName">User</span><span class="role-badge" id="meRole" hidden>ADMIN</span></summary>
+      <div class="menu">
+        <button type="button" id="menuPassword">Change password</button>
+        <button type="button" id="menuLogout">Log out</button>
+      </div>
+    </details>
+  </div>
+</header>
+
+<!-- big logo: fixed behind everything, fades out as you scroll (see js/app.js) -->
+<div id="bgLogo"><img src="img/marvel-studios.png" alt="Marvel Studios"></div>
+
+<main>
+  <!-- first screen: logo (above) + progress -->
+  <section class="hero">
+  <div class="hero-cta">
+    <div class="cta-row">
+      <button class="btn primary big" id="ctaSignup" type="button">Sign up</button>
+      <button class="btn big" id="ctaLogin" type="button">Log in</button>
+    </div>
+  </div>
+  <section class="progress-row">
+    <div class="progress-card">
+      <div class="progress-label"><b>Movies</b><span id="pMovieText">–</span></div>
+      <div class="bar"><div id="pMovieBar"></div></div>
+    </div>
+    <div class="progress-card">
+      <div class="progress-label"><b>Series</b><span id="pSeriesText">–</span></div>
+      <div class="bar"><div id="pSeriesBar"></div></div>
+    </div>
+  </section>
+  <div class="scroll-hint">Scroll ↓</div>
+  </section>
+
+  <!-- the two sections + extras -->
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="movie">Movies</button>
+    <button class="tab" data-tab="series">Series</button>
+    <button class="tab" data-tab="checklist">My Checklist</button>
+    <button class="tab" data-tab="stats">Stats</button>
+    <button class="tab" data-tab="admin" id="adminTab" hidden>Admin</button>
+  </nav>
+
+  <section class="filters" id="filters">
+    <div class="chips" id="phaseChips"></div>
+    <div class="filter-right">
+      <select id="sortSelect" title="Sort">
+        <option value="year">Sort: Release order</option>
+        <option value="rating">Sort: Top rated</option>
+        <option value="name">Sort: A to Z</option>
+        <option value="newest">Sort: Newest first</option>
+      </select>
+      <select id="statusFilter">
+        <option value="">All</option>
+        <option value="watched">Watched</option>
+        <option value="want_to_watch">Want to watch</option>
+      </select>
+      <input id="search" type="search" placeholder="Search title…">
+      <button class="btn primary surprise" id="surprise" title="Pick something for me">🎲 Surprise me</button>
+    </div>
+  </section>
+
+  <section id="content" class="grid"></section>
+</main>
+
+<!-- log in / sign up dialog -->
+<dialog id="authDialog">
+  <form id="authForm" class="auth" data-mode="login" novalidate>
+    <div class="d-head"><h2 id="authTitle">Welcome back</h2><button type="button" class="x" id="authClose" aria-label="Close">×</button></div>
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab active" data-mode="login">Log in</button>
+      <button type="button" class="auth-tab" data-mode="signup">Sign up</button>
+    </div>
+
+    <label>Username
+      <input id="auUser" maxlength="20" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+    </label>
+    <label class="signup-only">Email
+      <input id="auEmail" type="email" maxlength="100" autocomplete="email" spellcheck="false">
+    </label>
+    <label>Password
+      <input id="auPass" type="password" maxlength="128" autocomplete="current-password" required>
+    </label>
+    <label class="show-pw"><input type="checkbox" id="auShow"> Show password</label>
+    <label class="signup-only setup-only">Admin setup code <small>(only for the owner: it is printed in the VS Code terminal)</small>
+      <input id="auCode" inputmode="numeric" maxlength="12" autocomplete="off" placeholder="leave empty if you are not the owner">
+    </label>
+
+    <div class="form-error" id="authError" role="alert"></div>
+    <button class="btn primary wide" id="authSubmit" type="submit">Log in</button>
+    <p class="auth-note signup-only">Use at least 8 characters. Your password is stored as a salted hash, never as text.</p>
+  </form>
+</dialog>
+
+<!-- change password dialog (user menu) -->
+<dialog id="pwDialog">
+  <form id="pwForm" class="auth" novalidate>
+    <div class="d-head"><h2>Change password</h2><button type="button" class="x" id="pwClose" aria-label="Close">×</button></div>
+    <label>Current password
+      <input id="pwCurrent" type="password" maxlength="128" autocomplete="current-password" required>
+    </label>
+    <label>New password
+      <input id="pwNew" type="password" maxlength="128" autocomplete="new-password" required>
+    </label>
+    <label>Repeat new password
+      <input id="pwAgain" type="password" maxlength="128" autocomplete="new-password" required>
+    </label>
+    <div class="form-error" id="pwError" role="alert"></div>
+    <button class="btn primary wide" id="pwSave" type="submit">Save new password</button>
+    <p class="auth-note">Other devices where you are logged in will be logged out.</p>
+  </form>
+</dialog>
+
+<!-- detail / rating dialog (also used for admin confirmations) -->
+<dialog id="dialog"><div id="dialogBody"></div></dialog>
+<div id="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

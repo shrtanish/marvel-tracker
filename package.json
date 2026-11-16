@@ -1,0 +1,12 @@
+{
+  "name": "marvel-tracker",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A free checklist for every Marvel movie and series. Static site, no backend.",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "posters": "node scripts/fetch-posters.mjs"
+  },
+  "license": "MIT"
+}

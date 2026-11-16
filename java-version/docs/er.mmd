@@ -1,0 +1,61 @@
+erDiagram
+    PHASES ||--o{ TITLES : "has"
+    TITLES ||--o| MOVIE_DETAILS : "is a"
+    TITLES ||--o| SERIES_DETAILS : "is a"
+    DIRECTORS ||--o{ MOVIE_DETAILS : "directs"
+    PLATFORMS ||--o{ SERIES_DETAILS : "streams"
+    TITLES ||--o{ TITLE_GENRES : ""
+    GENRES ||--o{ TITLE_GENRES : ""
+    TITLES ||--o{ TITLE_CHARACTERS : ""
+    CHARACTERS ||--o{ TITLE_CHARACTERS : ""
+    USERS ||--o{ WATCHLIST : "keeps"
+    TITLES ||--o{ WATCHLIST : "listed in"
+    USERS ||--o{ REVIEWS : "writes"
+    TITLES ||--o{ REVIEWS : "receives"
+    PHASES { tinyint phase_id PK
+        tinyint phase_number
+        varchar saga }
+    TITLES { int title_id PK
+        varchar name
+        enum title_type
+        smallint release_year
+        tinyint phase_id FK
+        decimal avg_rating
+        int rating_count }
+    MOVIE_DETAILS { int title_id PK
+        smallint runtime_min
+        decimal box_office_million
+        int director_id FK }
+    SERIES_DETAILS { int title_id PK
+        tinyint seasons
+        smallint episodes
+        tinyint platform_id FK }
+    DIRECTORS { int director_id PK
+        varchar name }
+    PLATFORMS { tinyint platform_id PK
+        varchar name }
+    GENRES { tinyint genre_id PK
+        varchar name }
+    TITLE_GENRES { int title_id PK
+        tinyint genre_id PK }
+    CHARACTERS { int character_id PK
+        varchar hero_name
+        varchar real_name
+        varchar affiliation }
+    TITLE_CHARACTERS { int title_id PK
+        int character_id PK
+        enum role_type }
+    USERS { int user_id PK
+        varchar username
+        varchar email
+        date join_date }
+    WATCHLIST { int user_id PK
+        int title_id PK
+        enum status
+        date added_on
+        date watched_on }
+    REVIEWS { int review_id PK
+        int user_id FK
+        int title_id FK
+        tinyint rating
+        varchar review_text }

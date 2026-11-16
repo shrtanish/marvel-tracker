@@ -1,0 +1,2526 @@
+{
+ "updated": "2026-11-13",
+ "titles": [
+  {
+   "slug": "iron-man-2008",
+   "name": "Iron Man",
+   "type": "movie",
+   "year": 2008,
+   "month": 0,
+   "phase": 1,
+   "synopsis": "Billionaire Tony Stark builds a powered suit to escape captivity and becomes Iron Man.",
+   "runtime": 126,
+   "box": 585.0,
+   "director": "Jon Favreau",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "cameo",
+     "team": "S.H.I.E.L.D."
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "the-incredible-hulk-2008",
+   "name": "The Incredible Hulk",
+   "type": "movie",
+   "year": 2008,
+   "month": 0,
+   "phase": 1,
+   "synopsis": "Bruce Banner hunts for a cure while on the run from the military.",
+   "runtime": 112,
+   "box": 265.0,
+   "director": "Louis Leterrier",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Hulk",
+     "real": "Bruce Banner",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "cameo",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "iron-man-2-2010",
+   "name": "Iron Man 2",
+   "type": "movie",
+   "year": 2010,
+   "month": 0,
+   "phase": 1,
+   "synopsis": "Tony Stark faces the world's demand for his tech and a vengeful Russian rival.",
+   "runtime": 124,
+   "box": 624.0,
+   "director": "Jon Favreau",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "supporting",
+     "team": "S.H.I.E.L.D."
+    },
+    {
+     "name": "War Machine",
+     "real": "James Rhodes",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "thor-2011",
+   "name": "Thor",
+   "type": "movie",
+   "year": 2011,
+   "month": 0,
+   "phase": 1,
+   "synopsis": "The arrogant god Thor is banished to Earth and must prove himself worthy.",
+   "runtime": 115,
+   "box": 449.0,
+   "director": "Kenneth Branagh",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Loki",
+     "real": "Loki Laufeyson",
+     "role": "supporting",
+     "team": "Asgard"
+    },
+    {
+     "name": "Hawkeye",
+     "real": "Clint Barton",
+     "role": "cameo",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "cameo",
+     "team": "S.H.I.E.L.D."
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "captain-america-the-first-avenger-2011",
+   "name": "Captain America: The First Avenger",
+   "type": "movie",
+   "year": 2011,
+   "month": 0,
+   "phase": 1,
+   "synopsis": "Steve Rogers becomes a super-soldier and fights HYDRA in World War II.",
+   "runtime": 124,
+   "box": 371.0,
+   "director": "Joe Johnston",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "War"
+   ],
+   "characters": [
+    {
+     "name": "Captain America",
+     "real": "Steve Rogers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "cameo",
+     "team": "S.H.I.E.L.D."
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "the-avengers-2012",
+   "name": "The Avengers",
+   "type": "movie",
+   "year": 2012,
+   "month": 0,
+   "phase": 1,
+   "synopsis": "Earth's mightiest heroes unite to stop Loki and an alien invasion.",
+   "runtime": 143,
+   "box": 1520.0,
+   "director": "Joss Whedon",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Captain America",
+     "real": "Steve Rogers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hawkeye",
+     "real": "Clint Barton",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hulk",
+     "real": "Bruce Banner",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Loki",
+     "real": "Loki Laufeyson",
+     "role": "supporting",
+     "team": "Asgard"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "supporting",
+     "team": "S.H.I.E.L.D."
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "iron-man-3-2013",
+   "name": "Iron Man 3",
+   "type": "movie",
+   "year": 2013,
+   "month": 0,
+   "phase": 2,
+   "synopsis": "Tony Stark battles the Mandarin while struggling with anxiety after New York.",
+   "runtime": 130,
+   "box": 1215.0,
+   "director": "Shane Black",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "War Machine",
+     "real": "James Rhodes",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "thor-the-dark-world-2013",
+   "name": "Thor: The Dark World",
+   "type": "movie",
+   "year": 2013,
+   "month": 0,
+   "phase": 2,
+   "synopsis": "Thor must stop the Dark Elves from plunging the universe into darkness.",
+   "runtime": 112,
+   "box": 645.0,
+   "director": "Alan Taylor",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Loki",
+     "real": "Loki Laufeyson",
+     "role": "supporting",
+     "team": "Asgard"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "captain-america-the-winter-soldier-2014",
+   "name": "Captain America: The Winter Soldier",
+   "type": "movie",
+   "year": 2014,
+   "month": 0,
+   "phase": 2,
+   "synopsis": "Steve Rogers uncovers a conspiracy inside S.H.I.E.L.D.",
+   "runtime": 136,
+   "box": 714.0,
+   "director": "Anthony & Joe Russo",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Captain America",
+     "real": "Steve Rogers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Falcon",
+     "real": "Sam Wilson",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "supporting",
+     "team": "S.H.I.E.L.D."
+    },
+    {
+     "name": "Winter Soldier",
+     "real": "Bucky Barnes",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "guardians-of-the-galaxy-2014",
+   "name": "Guardians of the Galaxy",
+   "type": "movie",
+   "year": 2014,
+   "month": 0,
+   "phase": 2,
+   "synopsis": "A band of misfits steals an orb and ends up saving the galaxy.",
+   "runtime": 121,
+   "box": 773.0,
+   "director": "James Gunn",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Drax",
+     "real": "Drax the Destroyer",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Gamora",
+     "real": "Gamora",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Groot",
+     "real": "Groot",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Rocket",
+     "real": "Rocket Raccoon",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Star-Lord",
+     "real": "Peter Quill",
+     "role": "lead",
+     "team": "Guardians"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "avengers-age-of-ultron-2015",
+   "name": "Avengers: Age of Ultron",
+   "type": "movie",
+   "year": 2015,
+   "month": 0,
+   "phase": 2,
+   "synopsis": "The Avengers face Ultron, an AI bent on wiping out humanity.",
+   "runtime": 141,
+   "box": 1405.0,
+   "director": "Joss Whedon",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Captain America",
+     "real": "Steve Rogers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hawkeye",
+     "real": "Clint Barton",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hulk",
+     "real": "Bruce Banner",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Falcon",
+     "real": "Sam Wilson",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Scarlet Witch",
+     "real": "Wanda Maximoff",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Vision",
+     "real": "Vision",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "War Machine",
+     "real": "James Rhodes",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "ant-man-2015",
+   "name": "Ant-Man",
+   "type": "movie",
+   "year": 2015,
+   "month": 0,
+   "phase": 2,
+   "synopsis": "Thief Scott Lang inherits a suit that shrinks him and pulls off a heist.",
+   "runtime": 117,
+   "box": 519.0,
+   "director": "Peyton Reed",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy"
+   ],
+   "characters": [
+    {
+     "name": "Ant-Man",
+     "real": "Scott Lang",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Falcon",
+     "real": "Sam Wilson",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "captain-america-civil-war-2016",
+   "name": "Captain America: Civil War",
+   "type": "movie",
+   "year": 2016,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "The Avengers split over government oversight and fight each other.",
+   "runtime": 147,
+   "box": 1153.0,
+   "director": "Anthony & Joe Russo",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Captain America",
+     "real": "Steve Rogers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Ant-Man",
+     "real": "Scott Lang",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Black Panther",
+     "real": "T'Challa",
+     "role": "supporting",
+     "team": "Wakanda"
+    },
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Falcon",
+     "real": "Sam Wilson",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hawkeye",
+     "real": "Clint Barton",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Scarlet Witch",
+     "real": "Wanda Maximoff",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Spider-Man",
+     "real": "Peter Parker",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Vision",
+     "real": "Vision",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "War Machine",
+     "real": "James Rhodes",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Winter Soldier",
+     "real": "Bucky Barnes",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "doctor-strange-2016",
+   "name": "Doctor Strange",
+   "type": "movie",
+   "year": 2016,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "A brilliant surgeon learns the mystic arts after a career-ending accident.",
+   "runtime": 115,
+   "box": 677.0,
+   "director": "Scott Derrickson",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Doctor Strange",
+     "real": "Stephen Strange",
+     "role": "lead",
+     "team": "Masters of the Mystic Arts"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "guardians-of-the-galaxy-vol-2-2017",
+   "name": "Guardians of the Galaxy Vol. 2",
+   "type": "movie",
+   "year": 2017,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "The Guardians meet Peter Quill's father and fight to keep their family together.",
+   "runtime": 136,
+   "box": 863.0,
+   "director": "James Gunn",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Drax",
+     "real": "Drax the Destroyer",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Gamora",
+     "real": "Gamora",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Groot",
+     "real": "Groot",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Rocket",
+     "real": "Rocket Raccoon",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Star-Lord",
+     "real": "Peter Quill",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Nebula",
+     "real": "Nebula",
+     "role": "supporting",
+     "team": "Guardians"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "spider-man-homecoming-2017",
+   "name": "Spider-Man: Homecoming",
+   "type": "movie",
+   "year": 2017,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "Peter Parker balances high school life with being a hero under Tony Stark's watch.",
+   "runtime": 133,
+   "box": 880.0,
+   "director": "Jon Watts",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy"
+   ],
+   "characters": [
+    {
+     "name": "Spider-Man",
+     "real": "Peter Parker",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "thor-ragnarok-2017",
+   "name": "Thor: Ragnarok",
+   "type": "movie",
+   "year": 2017,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "Thor must escape the planet Sakaar to save Asgard from Hela.",
+   "runtime": 130,
+   "box": 854.0,
+   "director": "Taika Waititi",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Hulk",
+     "real": "Bruce Banner",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Loki",
+     "real": "Loki Laufeyson",
+     "role": "supporting",
+     "team": "Asgard"
+    },
+    {
+     "name": "Doctor Strange",
+     "real": "Stephen Strange",
+     "role": "cameo",
+     "team": "Masters of the Mystic Arts"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "black-panther-2018",
+   "name": "Black Panther",
+   "type": "movie",
+   "year": 2018,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "T'Challa returns to Wakanda to take the throne and face Killmonger.",
+   "runtime": 134,
+   "box": 1349.0,
+   "director": "Ryan Coogler",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Drama"
+   ],
+   "characters": [
+    {
+     "name": "Black Panther",
+     "real": "T'Challa",
+     "role": "lead",
+     "team": "Wakanda"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "avengers-infinity-war-2018",
+   "name": "Avengers: Infinity War",
+   "type": "movie",
+   "year": 2018,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "The Avengers and Guardians fight Thanos for the Infinity Stones.",
+   "runtime": 149,
+   "box": 2048.0,
+   "director": "Anthony & Joe Russo",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Black Panther",
+     "real": "T'Challa",
+     "role": "lead",
+     "team": "Wakanda"
+    },
+    {
+     "name": "Captain America",
+     "real": "Steve Rogers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Doctor Strange",
+     "real": "Stephen Strange",
+     "role": "lead",
+     "team": "Masters of the Mystic Arts"
+    },
+    {
+     "name": "Drax",
+     "real": "Drax the Destroyer",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Gamora",
+     "real": "Gamora",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Groot",
+     "real": "Groot",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Hulk",
+     "real": "Bruce Banner",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Rocket",
+     "real": "Rocket Raccoon",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Scarlet Witch",
+     "real": "Wanda Maximoff",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Spider-Man",
+     "real": "Peter Parker",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Star-Lord",
+     "real": "Peter Quill",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Vision",
+     "real": "Vision",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Falcon",
+     "real": "Sam Wilson",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nebula",
+     "real": "Nebula",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "War Machine",
+     "real": "James Rhodes",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Winter Soldier",
+     "real": "Bucky Barnes",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Loki",
+     "real": "Loki Laufeyson",
+     "role": "cameo",
+     "team": "Asgard"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "ant-man-and-the-wasp-2018",
+   "name": "Ant-Man and the Wasp",
+   "type": "movie",
+   "year": 2018,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "Scott Lang and Hope van Dyne race to rescue Janet from the Quantum Realm.",
+   "runtime": 118,
+   "box": 623.0,
+   "director": "Peyton Reed",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy"
+   ],
+   "characters": [
+    {
+     "name": "Ant-Man",
+     "real": "Scott Lang",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Wasp",
+     "real": "Hope van Dyne",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "captain-marvel-2019",
+   "name": "Captain Marvel",
+   "type": "movie",
+   "year": 2019,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "Carol Danvers becomes one of the universe's most powerful heroes.",
+   "runtime": 123,
+   "box": 1128.0,
+   "director": "Anna Boden & Ryan Fleck",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Captain Marvel",
+     "real": "Carol Danvers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "lead",
+     "team": "S.H.I.E.L.D."
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "avengers-endgame-2019",
+   "name": "Avengers: Endgame",
+   "type": "movie",
+   "year": 2019,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "The surviving Avengers attempt to undo Thanos's snap.",
+   "runtime": 181,
+   "box": 2799.0,
+   "director": "Anthony & Joe Russo",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Ant-Man",
+     "real": "Scott Lang",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Captain America",
+     "real": "Steve Rogers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hawkeye",
+     "real": "Clint Barton",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hulk",
+     "real": "Bruce Banner",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Black Panther",
+     "real": "T'Challa",
+     "role": "supporting",
+     "team": "Wakanda"
+    },
+    {
+     "name": "Captain Marvel",
+     "real": "Carol Danvers",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Doctor Strange",
+     "real": "Stephen Strange",
+     "role": "supporting",
+     "team": "Masters of the Mystic Arts"
+    },
+    {
+     "name": "Drax",
+     "real": "Drax the Destroyer",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "Falcon",
+     "real": "Sam Wilson",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Groot",
+     "real": "Groot",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "Nebula",
+     "real": "Nebula",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "Rocket",
+     "real": "Rocket Raccoon",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "Scarlet Witch",
+     "real": "Wanda Maximoff",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Spider-Man",
+     "real": "Peter Parker",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Star-Lord",
+     "real": "Peter Quill",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "War Machine",
+     "real": "James Rhodes",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Wasp",
+     "real": "Hope van Dyne",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Winter Soldier",
+     "real": "Bucky Barnes",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Gamora",
+     "real": "Gamora",
+     "role": "cameo",
+     "team": "Guardians"
+    },
+    {
+     "name": "Loki",
+     "real": "Loki Laufeyson",
+     "role": "cameo",
+     "team": "Asgard"
+    },
+    {
+     "name": "Vision",
+     "real": "Vision",
+     "role": "cameo",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "spider-man-far-from-home-2019",
+   "name": "Spider-Man: Far From Home",
+   "type": "movie",
+   "year": 2019,
+   "month": 0,
+   "phase": 3,
+   "synopsis": "Peter Parker's European trip is interrupted by Nick Fury and Mysterio.",
+   "runtime": 129,
+   "box": 1132.0,
+   "director": "Jon Watts",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy"
+   ],
+   "characters": [
+    {
+     "name": "Spider-Man",
+     "real": "Peter Parker",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "supporting",
+     "team": "S.H.I.E.L.D."
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "wandavision-2021",
+   "name": "WandaVision",
+   "type": "series",
+   "year": 2021,
+   "month": 1,
+   "phase": 4,
+   "synopsis": "Wanda and Vision live in a sitcom-style suburb that hides a strange truth.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 9,
+   "platform": "Disney+",
+   "genres": [
+    "Fantasy",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Scarlet Witch",
+     "real": "Wanda Maximoff",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Vision",
+     "real": "Vision",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "the-falcon-and-the-winter-soldier-2021",
+   "name": "The Falcon and the Winter Soldier",
+   "type": "series",
+   "year": 2021,
+   "month": 3,
+   "phase": 4,
+   "synopsis": "Sam Wilson and Bucky Barnes team up to deal with the legacy of the shield.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 6,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Falcon",
+     "real": "Sam Wilson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Winter Soldier",
+     "real": "Bucky Barnes",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "loki-2021",
+   "name": "Loki",
+   "type": "series",
+   "year": 2021,
+   "month": 6,
+   "phase": 4,
+   "synopsis": "After stealing the Tesseract, Loki is dragged into the Time Variance Authority.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 2,
+   "episodes": 12,
+   "platform": "Disney+",
+   "genres": [
+    "Fantasy",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Loki",
+     "real": "Loki Laufeyson",
+     "role": "lead",
+     "team": "Asgard"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "black-widow-2021",
+   "name": "Black Widow",
+   "type": "movie",
+   "year": 2021,
+   "month": 7,
+   "phase": 4,
+   "synopsis": "Natasha Romanoff confronts the dark side of her past.",
+   "runtime": 134,
+   "box": 379.0,
+   "director": "Cate Shortland",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "what-if-2021",
+   "name": "What If...?",
+   "type": "series",
+   "year": 2021,
+   "month": 8,
+   "phase": 4,
+   "synopsis": "An animated anthology that rewrites key moments of the MCU.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 3,
+   "episodes": 27,
+   "platform": "Disney+",
+   "genres": [
+    "Animation",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Black Panther",
+     "real": "T'Challa",
+     "role": "supporting",
+     "team": "Wakanda"
+    },
+    {
+     "name": "Captain Marvel",
+     "real": "Carol Danvers",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Doctor Strange",
+     "real": "Stephen Strange",
+     "role": "supporting",
+     "team": "Masters of the Mystic Arts"
+    },
+    {
+     "name": "Iron Man",
+     "real": "Tony Stark",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "shang-chi-and-the-legend-of-the-ten-rings-2021",
+   "name": "Shang-Chi and the Legend of the Ten Rings",
+   "type": "movie",
+   "year": 2021,
+   "month": 9,
+   "phase": 4,
+   "synopsis": "Shang-Chi is drawn into the Ten Rings organization he tried to leave behind.",
+   "runtime": 132,
+   "box": 432.0,
+   "director": "Destin Daniel Cretton",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Shang-Chi",
+     "real": "Shang-Chi",
+     "role": "lead",
+     "team": "Ten Rings"
+    },
+    {
+     "name": "Doctor Strange",
+     "real": "Stephen Strange",
+     "role": "cameo",
+     "team": "Masters of the Mystic Arts"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "eternals-2021",
+   "name": "Eternals",
+   "type": "movie",
+   "year": 2021,
+   "month": 11,
+   "phase": 4,
+   "synopsis": "Immortal beings reunite to protect humanity from the Deviants.",
+   "runtime": 156,
+   "box": 402.0,
+   "director": "Chloe Zhao",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Drama",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Ikaris",
+     "real": "Ikaris",
+     "role": "lead",
+     "team": "Eternals"
+    },
+    {
+     "name": "Sersi",
+     "real": "Sersi",
+     "role": "lead",
+     "team": "Eternals"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "hawkeye-2021",
+   "name": "Hawkeye",
+   "type": "series",
+   "year": 2021,
+   "month": 11,
+   "phase": 4,
+   "synopsis": "Clint Barton teams up with Kate Bishop over the Christmas season.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 6,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Comedy"
+   ],
+   "characters": [
+    {
+     "name": "Hawkeye",
+     "real": "Clint Barton",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "spider-man-no-way-home-2021",
+   "name": "Spider-Man: No Way Home",
+   "type": "movie",
+   "year": 2021,
+   "month": 12,
+   "phase": 4,
+   "synopsis": "A spell gone wrong brings villains from other universes to Peter's world.",
+   "runtime": 148,
+   "box": 1921.0,
+   "director": "Jon Watts",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Spider-Man",
+     "real": "Peter Parker",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Doctor Strange",
+     "real": "Stephen Strange",
+     "role": "supporting",
+     "team": "Masters of the Mystic Arts"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "moon-knight-2022",
+   "name": "Moon Knight",
+   "type": "series",
+   "year": 2022,
+   "month": 3,
+   "phase": 4,
+   "synopsis": "Steven Grant discovers he shares a body with a mercenary and an Egyptian god's avatar.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 6,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Moon Knight",
+     "real": "Marc Spector",
+     "role": "lead",
+     "team": "Independent"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "doctor-strange-in-the-multiverse-of-madness-2022",
+   "name": "Doctor Strange in the Multiverse of Madness",
+   "type": "movie",
+   "year": 2022,
+   "month": 5,
+   "phase": 4,
+   "synopsis": "Doctor Strange crosses the multiverse to protect America Chavez.",
+   "runtime": 126,
+   "box": 955.0,
+   "director": "Sam Raimi",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Fantasy",
+    "Horror"
+   ],
+   "characters": [
+    {
+     "name": "Doctor Strange",
+     "real": "Stephen Strange",
+     "role": "lead",
+     "team": "Masters of the Mystic Arts"
+    },
+    {
+     "name": "Scarlet Witch",
+     "real": "Wanda Maximoff",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "ms-marvel-2022",
+   "name": "Ms. Marvel",
+   "type": "series",
+   "year": 2022,
+   "month": 6,
+   "phase": 4,
+   "synopsis": "Teen Kamala Khan gains powers and becomes her hero, Ms. Marvel.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 6,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Comedy"
+   ],
+   "characters": [
+    {
+     "name": "Ms. Marvel",
+     "real": "Kamala Khan",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "thor-love-and-thunder-2022",
+   "name": "Thor: Love and Thunder",
+   "type": "movie",
+   "year": 2022,
+   "month": 7,
+   "phase": 4,
+   "synopsis": "Thor teams up with Jane Foster to stop Gorr the God Butcher.",
+   "runtime": 119,
+   "box": 760.0,
+   "director": "Taika Waititi",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Thor",
+     "real": "Thor Odinson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Drax",
+     "real": "Drax the Destroyer",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "Gamora",
+     "real": "Gamora",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "Groot",
+     "real": "Groot",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "Rocket",
+     "real": "Rocket Raccoon",
+     "role": "supporting",
+     "team": "Guardians"
+    },
+    {
+     "name": "Star-Lord",
+     "real": "Peter Quill",
+     "role": "supporting",
+     "team": "Guardians"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "she-hulk-attorney-at-law-2022",
+   "name": "She-Hulk: Attorney at Law",
+   "type": "series",
+   "year": 2022,
+   "month": 8,
+   "phase": 4,
+   "synopsis": "Jennifer Walters balances a law career with being a Hulk.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 9,
+   "platform": "Disney+",
+   "genres": [
+    "Comedy",
+    "Legal"
+   ],
+   "characters": [
+    {
+     "name": "She-Hulk",
+     "real": "Jennifer Walters",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hulk",
+     "real": "Bruce Banner",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "black-panther-wakanda-forever-2022",
+   "name": "Black Panther: Wakanda Forever",
+   "type": "movie",
+   "year": 2022,
+   "month": 11,
+   "phase": 4,
+   "synopsis": "Wakanda defends itself from Talokan after the loss of King T'Challa.",
+   "runtime": 161,
+   "box": 859.0,
+   "director": "Ryan Coogler",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Drama"
+   ],
+   "characters": [
+    {
+     "name": "Black Panther",
+     "real": "T'Challa",
+     "role": "lead",
+     "team": "Wakanda"
+    },
+    {
+     "name": "Shuri",
+     "real": "Shuri",
+     "role": "lead",
+     "team": "Wakanda"
+    },
+    {
+     "name": "War Machine",
+     "real": "James Rhodes",
+     "role": "cameo",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "ant-man-and-the-wasp-quantumania-2023",
+   "name": "Ant-Man and the Wasp: Quantumania",
+   "type": "movie",
+   "year": 2023,
+   "month": 2,
+   "phase": 5,
+   "synopsis": "Scott, Hope and their family get trapped in the Quantum Realm with Kang.",
+   "runtime": 125,
+   "box": 476.0,
+   "director": "Peyton Reed",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Ant-Man",
+     "real": "Scott Lang",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Wasp",
+     "real": "Hope van Dyne",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "guardians-of-the-galaxy-vol-3-2023",
+   "name": "Guardians of the Galaxy Vol. 3",
+   "type": "movie",
+   "year": 2023,
+   "month": 5,
+   "phase": 5,
+   "synopsis": "The Guardians fight to save Rocket's life and past.",
+   "runtime": 150,
+   "box": 845.0,
+   "director": "James Gunn",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Drax",
+     "real": "Drax the Destroyer",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Gamora",
+     "real": "Gamora",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Groot",
+     "real": "Groot",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Nebula",
+     "real": "Nebula",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Rocket",
+     "real": "Rocket Raccoon",
+     "role": "lead",
+     "team": "Guardians"
+    },
+    {
+     "name": "Star-Lord",
+     "real": "Peter Quill",
+     "role": "lead",
+     "team": "Guardians"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "secret-invasion-2023",
+   "name": "Secret Invasion",
+   "type": "series",
+   "year": 2023,
+   "month": 6,
+   "phase": 5,
+   "synopsis": "Nick Fury uncovers a Skrull infiltration of Earth.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 6,
+   "platform": "Disney+",
+   "genres": [
+    "Sci-Fi",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "lead",
+     "team": "S.H.I.E.L.D."
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "the-marvels-2023",
+   "name": "The Marvels",
+   "type": "movie",
+   "year": 2023,
+   "month": 11,
+   "phase": 5,
+   "synopsis": "Carol Danvers, Monica Rambeau and Kamala Khan swap places when their powers entangle.",
+   "runtime": 105,
+   "box": 206.0,
+   "director": "Nia DaCosta",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Captain Marvel",
+     "real": "Carol Danvers",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Ms. Marvel",
+     "real": "Kamala Khan",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Nick Fury",
+     "real": "Nicholas J. Fury",
+     "role": "supporting",
+     "team": "S.H.I.E.L.D."
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "echo-2024",
+   "name": "Echo",
+   "type": "series",
+   "year": 2024,
+   "month": 1,
+   "phase": 5,
+   "synopsis": "Maya Lopez returns to her hometown to confront her past and her ties to the Kingpin.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 5,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Drama",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Echo",
+     "real": "Maya Lopez",
+     "role": "lead",
+     "team": "Independent"
+    },
+    {
+     "name": "Kingpin",
+     "real": "Wilson Fisk",
+     "role": "supporting",
+     "team": "Fisk Enterprises"
+    },
+    {
+     "name": "Daredevil",
+     "real": "Matt Murdock",
+     "role": "cameo",
+     "team": "Defenders"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "x-men-97-2024",
+   "name": "X-Men '97",
+   "type": "series",
+   "year": 2024,
+   "month": 3,
+   "phase": 5,
+   "synopsis": "The revived 1990s animated X-Men carry on after Professor X's life is threatened, in a world that still fears mutants. Season 2 premiered in July 2026.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 2,
+   "episodes": 19,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Animation",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Cyclops",
+     "real": "Scott Summers",
+     "role": "lead",
+     "team": "X-Men"
+    },
+    {
+     "name": "Storm",
+     "real": "Ororo Munroe",
+     "role": "lead",
+     "team": "X-Men"
+    },
+    {
+     "name": "Rogue",
+     "real": "Anna Marie",
+     "role": "lead",
+     "team": "X-Men"
+    },
+    {
+     "name": "Gambit",
+     "real": "Remy LeBeau",
+     "role": "supporting",
+     "team": "X-Men"
+    },
+    {
+     "name": "Magneto",
+     "real": "Erik Lehnsherr",
+     "role": "supporting",
+     "team": "Brotherhood"
+    },
+    {
+     "name": "Jean Grey",
+     "real": "Jean Grey",
+     "role": "supporting",
+     "team": "X-Men"
+    },
+    {
+     "name": "Wolverine",
+     "real": "Logan",
+     "role": "supporting",
+     "team": "X-Men"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "deadpool-and-wolverine-2024",
+   "name": "Deadpool & Wolverine",
+   "type": "movie",
+   "year": 2024,
+   "month": 7,
+   "phase": 5,
+   "synopsis": "Deadpool recruits a reluctant Wolverine to save his universe.",
+   "runtime": 128,
+   "box": 1338.0,
+   "director": "Shawn Levy",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Comedy"
+   ],
+   "characters": [
+    {
+     "name": "Deadpool",
+     "real": "Wade Wilson",
+     "role": "lead",
+     "team": "Mercenary"
+    },
+    {
+     "name": "Wolverine",
+     "real": "James Howlett (Logan)",
+     "role": "lead",
+     "team": "X-Men"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "agatha-all-along-2024",
+   "name": "Agatha All Along",
+   "type": "series",
+   "year": 2024,
+   "month": 9,
+   "phase": 5,
+   "synopsis": "Agatha Harkness walks the Witches' Road to regain her powers.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 9,
+   "platform": "Disney+",
+   "genres": [
+    "Comedy",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Agatha Harkness",
+     "real": "Agatha Harkness",
+     "role": "lead",
+     "team": "Witches"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "your-friendly-neighborhood-spider-man-2025",
+   "name": "Your Friendly Neighborhood Spider-Man",
+   "type": "series",
+   "year": 2025,
+   "month": 1,
+   "phase": 5,
+   "synopsis": "An animated origin story in which teenage Peter Parker becomes Spider-Man with Norman Osborn as his mentor.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 10,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Animation",
+    "Comedy"
+   ],
+   "characters": [
+    {
+     "name": "Spider-Man",
+     "real": "Peter Parker",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Norman Osborn",
+     "real": "Norman Osborn",
+     "role": "supporting",
+     "team": "Oscorp"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "captain-america-brave-new-world-2025",
+   "name": "Captain America: Brave New World",
+   "type": "movie",
+   "year": 2025,
+   "month": 2,
+   "phase": 5,
+   "synopsis": "Sam Wilson steps in as Captain America amid an international crisis.",
+   "runtime": 118,
+   "box": 415.0,
+   "director": "Julius Onah",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Falcon",
+     "real": "Sam Wilson",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Hulk",
+     "real": "Bruce Banner",
+     "role": "supporting",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "daredevil-born-again-2025",
+   "name": "Daredevil: Born Again",
+   "type": "series",
+   "year": 2025,
+   "month": 3,
+   "phase": 5,
+   "synopsis": "Matt Murdock and Wilson Fisk, now mayor of New York, clash over the future of the city. Season 2 aired in March 2026.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 2,
+   "episodes": 17,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Drama",
+    "Legal",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Daredevil",
+     "real": "Matt Murdock",
+     "role": "lead",
+     "team": "Defenders"
+    },
+    {
+     "name": "Kingpin",
+     "real": "Wilson Fisk",
+     "role": "lead",
+     "team": "Fisk Enterprises"
+    },
+    {
+     "name": "Punisher",
+     "real": "Frank Castle",
+     "role": "supporting",
+     "team": "Independent"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "thunderbolts-2025",
+   "name": "Thunderbolts*",
+   "type": "movie",
+   "year": 2025,
+   "month": 5,
+   "phase": 5,
+   "synopsis": "A team of antiheroes is pulled into a deadly trap set by the government.",
+   "runtime": 127,
+   "box": 382.0,
+   "director": "Jake Schreier",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Winter Soldier",
+     "real": "Bucky Barnes",
+     "role": "supporting",
+     "team": "Avengers"
+    },
+    {
+     "name": "Black Widow",
+     "real": "Natasha Romanoff",
+     "role": "cameo",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "ironheart-2025",
+   "name": "Ironheart",
+   "type": "series",
+   "year": 2025,
+   "month": 6,
+   "phase": 5,
+   "synopsis": "Riri Williams builds her own suit and faces a dangerous rival in Chicago.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 6,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Ironheart",
+     "real": "Riri Williams",
+     "role": "lead",
+     "team": "Independent"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "the-fantastic-four-first-steps-2025",
+   "name": "The Fantastic Four: First Steps",
+   "type": "movie",
+   "year": 2025,
+   "month": 7,
+   "phase": 6,
+   "synopsis": "Marvel's first family protects a retro-futuristic Earth from Galactus.",
+   "runtime": 115,
+   "box": 521.0,
+   "director": "Matt Shakman",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Human Torch",
+     "real": "Johnny Storm",
+     "role": "lead",
+     "team": "Fantastic Four"
+    },
+    {
+     "name": "Invisible Woman",
+     "real": "Sue Storm",
+     "role": "lead",
+     "team": "Fantastic Four"
+    },
+    {
+     "name": "Mr. Fantastic",
+     "real": "Reed Richards",
+     "role": "lead",
+     "team": "Fantastic Four"
+    },
+    {
+     "name": "The Thing",
+     "real": "Ben Grimm",
+     "role": "lead",
+     "team": "Fantastic Four"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "eyes-of-wakanda-2025",
+   "name": "Eyes of Wakanda",
+   "type": "series",
+   "year": 2025,
+   "month": 8,
+   "phase": 6,
+   "synopsis": "An animated look at the Hatut Zeraze, Wakanda's covert operatives.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 4,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Animation"
+   ],
+   "characters": [
+    {
+     "name": "Black Panther",
+     "real": "T'Challa",
+     "role": "supporting",
+     "team": "Wakanda"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "marvel-zombies-2025",
+   "name": "Marvel Zombies",
+   "type": "series",
+   "year": 2025,
+   "month": 9,
+   "phase": 6,
+   "synopsis": "Survivors in the zombie-plagued universe first seen in What If...? fight to stay alive and reach safety.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 4,
+   "platform": "Disney+",
+   "genres": [
+    "Action",
+    "Animation",
+    "Horror"
+   ],
+   "characters": [
+    {
+     "name": "Yelena Belova",
+     "real": "Yelena Belova",
+     "role": "lead",
+     "team": "Thunderbolts"
+    },
+    {
+     "name": "Kate Bishop",
+     "real": "Kate Bishop",
+     "role": "lead",
+     "team": "Independent"
+    },
+    {
+     "name": "Shang-Chi",
+     "real": "Shang-Chi",
+     "role": "supporting",
+     "team": "Ten Rings"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "wonder-man-2026",
+   "name": "Wonder Man",
+   "type": "series",
+   "year": 2026,
+   "month": 1,
+   "phase": 6,
+   "synopsis": "Struggling actor Simon Williams chases a superhero role in Hollywood and is drawn into a friendship with Trevor Slattery.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 8,
+   "platform": "Disney+",
+   "genres": [
+    "Comedy",
+    "Drama",
+    "Fantasy"
+   ],
+   "characters": [
+    {
+     "name": "Wonder Man",
+     "real": "Simon Williams",
+     "role": "lead",
+     "team": "Independent"
+    },
+    {
+     "name": "Trevor Slattery",
+     "real": "Trevor Slattery",
+     "role": "lead",
+     "team": "Independent"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "spider-man-brand-new-day-2026",
+   "name": "Spider-Man: Brand New Day",
+   "type": "movie",
+   "year": 2026,
+   "month": 7,
+   "phase": 6,
+   "synopsis": "Peter Parker juggles street-level heroics and a quiet life in New York as a dangerous new threat emerges.",
+   "runtime": 150,
+   "box": 2521.0,
+   "director": "Destin Daniel Cretton",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [
+    {
+     "name": "Spider-Man",
+     "real": "Peter Parker",
+     "role": "lead",
+     "team": "Avengers"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "visionquest-2026",
+   "name": "VisionQuest",
+   "type": "series",
+   "year": 2026,
+   "month": 10,
+   "phase": 6,
+   "synopsis": "A rebuilt Vision searches for who he is in the final chapter of the WandaVision trilogy.",
+   "runtime": null,
+   "box": null,
+   "director": null,
+   "seasons": 1,
+   "episodes": 8,
+   "platform": "Disney+",
+   "genres": [
+    "Drama",
+    "Sci-Fi",
+    "Thriller"
+   ],
+   "characters": [
+    {
+     "name": "Vision",
+     "real": "Vision",
+     "role": "lead",
+     "team": "Avengers"
+    },
+    {
+     "name": "Ultron",
+     "real": "Ultron",
+     "role": "supporting",
+     "team": "Independent"
+    }
+   ],
+   "upcoming": false
+  },
+  {
+   "slug": "avengers-doomsday-2026",
+   "name": "Avengers: Doomsday",
+   "type": "movie",
+   "year": 2026,
+   "month": 12,
+   "phase": 6,
+   "synopsis": "Earth's heroes unite against Doctor Doom. In cinemas December 18, 2026.",
+   "runtime": null,
+   "box": null,
+   "director": "Anthony & Joe Russo",
+   "seasons": null,
+   "episodes": null,
+   "platform": null,
+   "genres": [
+    "Action",
+    "Sci-Fi"
+   ],
+   "characters": [],
+   "upcoming": true,
+   "releaseDate": "2026-12-18"
+  }
+ ]
+}
