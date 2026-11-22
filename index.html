@@ -7,33 +7,25 @@
   <meta name="description" content="A free checklist for every Marvel movie and series. Tick off what you have watched, rate it and see your progress. Saved in your browser.">
   <meta name="theme-color" content="#e62429">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Avengers: Doomsday countdown (target date is set in js/app.js) -->
-<div class="doom" role="timer" aria-label="Time until Avengers: Doomsday">
-  <div class="doom-title" id="doomTitle">DOOMSDAY IS COMING</div>
-  <div class="doom-units" id="doomUnits">
-    <div><b id="cdMonths">00</b><span>MONTHS</span></div><i>:</i>
-    <div><b id="cdDays">00</b><span>DAYS</span></div><i>:</i>
-    <div><b id="cdHours">00</b><span>HOURS</span></div><i>:</i>
-    <div><b id="cdMinutes">00</b><span>MINUTES</span></div><i>:</i>
-    <div><b id="cdSeconds">00</b><span>SECONDS</span></div>
-  </div>
-</div>
+<header class="top">
+  <a class="brand" href="#movies" aria-label="Marvel Tracker home">MARVEL<span>TRACKER</span></a>
 
-<header class="bar">
-  <a class="brand" href="#movies" aria-label="Marvel Tracker home">Marvel<span>Tracker</span></a>
-  <nav class="tabs" id="tabs" aria-label="Sections">
-    <a href="#movies" data-tab="movies">Movies</a>
-    <a href="#series" data-tab="series">Series</a>
-    <a href="#checklist" data-tab="checklist">My checklist</a>
-    <a href="#stats" data-tab="stats">Stats</a>
-  </nav>
+  <!-- Avengers: Doomsday countdown (target date is set in js/app.js) -->
+  <div class="doom" role="timer" aria-label="Time until Avengers: Doomsday">
+    <div class="doom-title" id="doomTitle">DOOMSDAY IS COMING</div>
+    <div class="doom-units" id="doomUnits">
+      <div><b id="cdMonths">00</b><span>MONTHS</span></div><i>:</i>
+      <div><b id="cdDays">00</b><span>DAYS</span></div><i>:</i>
+      <div><b id="cdHours">00</b><span>HOURS</span></div><i>:</i>
+      <div><b id="cdMinutes">00</b><span>MINUTES</span></div><i>:</i>
+      <div><b id="cdSeconds">00</b><span>SECONDS</span></div>
+    </div>
+  </div>
+
   <details class="menu" id="menu">
     <summary>Backup</summary>
     <div class="menu-pop">
@@ -45,10 +37,12 @@
   </details>
 </header>
 
+<!-- big logo and Avengers artwork: fixed behind everything, fades out as you scroll (see js/app.js) -->
+<div id="bgLogo"><img src="img/marvel-studios.png" alt="Marvel Studios"></div>
+
 <main>
   <section class="hero" aria-labelledby="heroTitle">
-    <h1 id="heroTitle">Every Marvel movie and series, one checklist.</h1>
-    <p class="lede">Tick off what you have watched, rate it and see how far through the universe you are. No account needed.</p>
+    <h1 id="heroTitle" class="sr">Marvel Tracker: every Marvel movie and series, one checklist</h1>
 
     <div class="sheet-wrap">
       <div class="sheet" id="sheet" aria-label="All titles in release order"></div>
@@ -69,14 +63,22 @@
         <button type="button" class="btn" id="btnSurprise">Surprise me</button>
       </div>
     </div>
+    <div class="scroll-hint" aria-hidden="true">Scroll ↓</div>
   </section>
+
+  <nav class="tabs" id="tabs" aria-label="Sections">
+    <a href="#movies" data-tab="movies">Movies</a>
+    <a href="#series" data-tab="series">Series</a>
+    <a href="#checklist" data-tab="checklist">My Checklist</a>
+    <a href="#stats" data-tab="stats">Stats</a>
+  </nav>
 
   <section id="view" aria-live="polite"></section>
 </main>
 
 <footer class="foot">
-  <p>Marvel Tracker is an unofficial fan project and is not affiliated with, endorsed by or sponsored by Marvel, Marvel Studios or The Walt Disney Company. All titles, characters and artwork belong to their owners.</p>
-  <p>Posters and movie data courtesy of <a href="https://www.themoviedb.org" target="_blank" rel="noopener">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+  <p>Marvel Tracker is an unofficial fan project and is not affiliated with, endorsed by or sponsored by Marvel, Marvel Studios or The Walt Disney Company. All titles, characters, logos and artwork belong to their owners. Background artwork by Ryan Meinerding for Marvel Studios.</p>
+  <p>Poster images are shown from <a href="https://www.themoviedb.org" target="_blank" rel="noopener">TMDB</a> and <a href="https://en.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a> and belong to their studios. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
   <p>Release dates and box office figures are approximate. Your checklist never leaves your browser.</p>
 </footer>
 

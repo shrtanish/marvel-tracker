@@ -6,8 +6,10 @@
 
   const KEY = 'marvel-tracker-v1';
   const DOOMSDAY = new Date('2026-12-18T05:00:00Z');   // Avengers: Doomsday, 05:00 UTC
-  const HUE = { 1: 350, 2: 32, 3: 215, 4: 265, 5: 168, 6: 48 };
   const IMG = 'https://image.tmdb.org/t/p/';
+  const WIKI_API = 'https://en.wikipedia.org/w/api.php';
+  const WIKI_KEY = 'marvel-tracker-wiki-v1';
+  const WIKI_DAYS = 30;
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   const $ = (s, el = document) => el.querySelector(s);
@@ -19,7 +21,9 @@
   /* ---------------- data ---------------- */
   let T = [];            // all titles, in release order
   let BY = {};           // slug -> title
-  let posters = {};      // slug -> TMDB poster path
+  let posters = {};      // slug -> TMDB poster path (data/posters.json, optional)
+  let wikiPosters = {};  // slug -> Wikipedia poster URL (looked up in the browser, cached)
+  let wikiMiss = [];     // slugs Wikipedia had no poster for (not asked again until the cache expires)
   let store = emptyStore();
   let memoryCopy = null; // used if the browser blocks localStorage
 
@@ -55,11 +59,75 @@
   function wireImages(root) {
     root.querySelectorAll('img').forEach(i => i.addEventListener('error', () => i.remove(), { once: true }));
   }
+  function posterUrl(slug, big) {
+    if (posters[slug]) return `${IMG}${big ? 'w500' : 'w342'}${posters[slug]}`;
+    return wikiPosters[slug] || '';
+  }
   function posterHtml(t, big) {
-    const fb = `<div class="fallback" style="--hue:${HUE[t.phase] ?? 350}"><b>${esc(t.name)}</b><span>${t.year}</span></div>`;
-    const p = posters[t.slug];
-    if (!p) return fb;
-    return fb + `<img src="${IMG}${big ? 'w500' : 'w342'}${esc(p)}" alt="${big ? esc(t.name) + ' poster' : ''}" loading="lazy" decoding="async">`;
+    const u = posterUrl(t.slug, big);
+    return `<div class="pw" data-pslug="${t.slug}" data-big="${big ? 1 : ''}">
+      <div class="fallback phase-${t.phase}"><b>${esc(t.name)}</b><span>${t.year}</span></div>
+      ${u ? `<img src="${esc(u)}" alt="${big ? esc(t.name) + ' poster' : ''}" loading="lazy" decoding="async">` : ''}</div>`;
+  }
+  function applyPosters() {   // add posters that arrived after the page was drawn
+    document.querySelectorAll('.pw').forEach(w => {
+      if (w.querySelector('img')) return;
+      const t = BY[w.dataset.pslug], u = t && posterUrl(t.slug, w.dataset.big);
+      if (!u) return;
+      const i = new Image(); i.alt = w.dataset.big ? t.name + ' poster' : ''; i.decoding = 'async'; i.src = u;
+      i.addEventListener('error', () => i.remove(), { once: true });
+      w.appendChild(i);
+    });
+  }
+
+  /* ---------------- posters from Wikipedia (no key needed; used when data/posters.json has none) ---------------- */
+  function wikiCache() {
+    try {
+      const o = JSON.parse(localStorage.getItem(WIKI_KEY));
+      if (o && typeof o.p === 'object' && Date.now() - o.t < WIKI_DAYS * 864e5) { wikiMiss = Array.isArray(o.m) ? o.m : []; return o.p; }
+    } catch (e) { /* none yet */ }
+    return {};
+  }
+  function wikiSave(t0) { try { localStorage.setItem(WIKI_KEY, JSON.stringify({ t: t0 || Date.now(), p: wikiPosters, m: wikiMiss })); } catch (e) { /* ignore */ } }
+  const wikiOk = u => typeof u === 'string' && /^https:\/\/upload\.wikimedia\.org\//.test(u);
+  async function wikiQuery(extra) {
+    const qs = new URLSearchParams({ action: 'query', format: 'json', origin: '*', prop: 'pageimages', piprop: 'thumbnail', pithumbsize: '500', ...extra });
+    const r = await fetch(`${WIKI_API}?${qs}`);
+    if (!r.ok) throw new Error('wiki ' + r.status);
+    return (await r.json()).query || {};
+  }
+  async function loadWikiPosters() {
+    wikiPosters = wikiCache();
+    const stamp = (() => { try { return JSON.parse(localStorage.getItem(WIKI_KEY)).t; } catch (e) { return 0; } })() || Date.now();
+    for (const k of Object.keys(wikiPosters)) if (!wikiOk(wikiPosters[k]) || posters[k]) delete wikiPosters[k];
+    applyPosters();
+    const need = () => T.filter(t => !posters[t.slug] && !wikiPosters[t.slug] && !wikiMiss.includes(t.slug));
+    if (!need().length) return;
+    try {
+      // step 1: look up the article titles in batches of 50
+      const todo = need();
+      for (let i = 0; i < todo.length; i += 50) {
+        const part = todo.slice(i, i + 50), titles = part.map(t => t.wiki || t.name);
+        const q = await wikiQuery({ redirects: '1', titles: titles.join('|') });
+        const hop = {};   // title as sent -> title as stored (normalised, then redirected)
+        [...(q.normalized || []), ...(q.redirects || [])].forEach(x => { hop[x.from] = x.to; });
+        const byTitle = {}; Object.values(q.pages || {}).forEach(pg => { byTitle[pg.title] = pg; });
+        part.forEach(t => {
+          let k = t.wiki || t.name; for (let n = 0; n < 4 && hop[k]; n++) k = hop[k];
+          const u = byTitle[k] && byTitle[k].thumbnail && byTitle[k].thumbnail.source;
+          if (wikiOk(u)) wikiPosters[t.slug] = u;
+        });
+      }
+      applyPosters(); wikiSave(stamp);
+      // step 2: search for the ones that did not match (a few at a time)
+      for (const t of need()) {
+        const kind = t.type === 'movie' ? 'film' : 'TV series';
+        const q = await wikiQuery({ generator: 'search', gsrsearch: `${t.name} ${t.year} Marvel ${kind}`, gsrnamespace: '0', gsrlimit: '1' });
+        const pg = Object.values(q.pages || {})[0], u = pg && pg.thumbnail && pg.thumbnail.source;
+        if (wikiOk(u)) { wikiPosters[t.slug] = u; applyPosters(); } else wikiMiss.push(t.slug);
+      }
+      wikiSave(stamp);
+    } catch (e) { /* offline or blocked: the title cards stay */ }
   }
   function stars(n) { return n ? '★'.repeat(n) + '☆'.repeat(5 - n) : ''; }
 
@@ -97,13 +165,21 @@
 
   function card(t) {
     const s = stateOf(t), r = store.rating[t.slug];
-    const mark = s === 'watched' ? '<span class="mark watched" aria-hidden="true">✓</span>' : s === 'want' ? '<span class="mark want" aria-hidden="true">+</span>' : '';
+    const dot = s === 'watched' ? '<span class="status-dot watched">✓ Watched</span>' : s === 'want' ? '<span class="status-dot want">★ Want</span>' : '';
     const soon = t.upcoming ? `<span class="soon-tag">In cinemas ${fmtDate(t.releaseDate)}</span>` : '';
-    return `<button class="card" data-slug="${t.slug}" aria-label="Open ${esc(t.name)}">
-      <div class="poster">${posterHtml(t)}<span class="badge">Phase ${t.phase}</span>${mark}${soon}</div>
-      <div class="cap"><b>${esc(t.name)}</b><small>${t.year}${t.type === 'movie' && t.runtime ? ', ' + t.runtime + ' min' : t.type === 'series' ? ', ' + t.seasons + (t.seasons > 1 ? ' seasons' : ' season') : ''}</small>
-      ${r ? `<div class="stars" aria-label="Your rating ${r} of 5">${stars(r)}</div>` : ''}</div>
-    </button>`;
+    const info = t.type === 'movie' ? [t.year, t.runtime ? fmtRun(t.runtime) : ''] : [t.year, t.seasons ? t.seasons + (t.seasons > 1 ? ' seasons' : ' season') : ''];
+    return `<article class="card g${t.phase}">
+      <button class="card-top" data-slug="${t.slug}" aria-label="Open ${esc(t.name)}">${posterHtml(t)}<span class="badges"><span class="badge">Phase ${t.phase}</span>${dot}</span>${soon}</button>
+      <div class="card-body">
+        <button class="card-title" data-slug="${t.slug}">${esc(t.name)}</button>
+        <div class="meta">${info.filter(Boolean).join(' · ')}</div>
+        ${r ? `<div class="rating" aria-label="Your rating ${r} of 5">${stars(r)}</div>` : ''}
+        <div class="actions">
+          <button class="qbtn ${s === 'watched' ? 'on-watched' : ''}" data-q="watch" data-slug="${t.slug}" ${t.upcoming ? 'disabled' : ''}>${s === 'watched' ? '✓ Watched' : 'Watched'}</button>
+          <button class="qbtn ${s === 'want' ? 'on-want' : ''}" data-q="want" data-slug="${t.slug}" ${s === 'watched' ? 'disabled' : ''}>${s === 'want' ? '✓ Want' : '+ Want'}</button>
+        </div>
+      </div>
+    </article>`;
   }
 
   function renderBrowse(type) {
@@ -264,6 +340,14 @@
     if (on) { store.watched[slug] = today(); delete store.want[slug]; toast('Marked as watched'); }
     else { delete store.watched[slug]; toast('Removed from watched'); }
   }
+  function quickAction(b) {   // the Watched / Want buttons on a card
+    const slug = b.dataset.slug, t = BY[slug]; if (!t) return;
+    if (b.dataset.q === 'watch') setWatched(slug, !store.watched[slug]);
+    else if (store.want[slug]) { delete store.want[slug]; toast('Removed from your list'); }
+    else { store.want[slug] = true; toast('Added to your list'); }
+    afterChange();
+    const again = $(`[data-q="${b.dataset.q}"][data-slug="${slug}"]`); if (again) again.focus({ preventScroll: true });
+  }
   function onDetailClick(e) {
     const b = e.target.closest('[data-act]'); if (!b) return;
     const t = BY[openSlug], act = b.dataset.act;
@@ -281,16 +365,26 @@
   }
 
   /* ---------------- routing ---------------- */
-  function route(keepFilters) {
+  function toTabs() {   // bring the tab bar up under the red header when the first screen is still showing
+    const y = $('.hero').getBoundingClientRect().bottom + window.scrollY - $('.top').offsetHeight;
+    if (window.scrollY < y - 4) window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+  function route(keepFilters, scroll) {
     const tab = (location.hash || '#movies').slice(1);
     ui.tab = ['movies', 'series', 'checklist', 'stats'].includes(tab) ? tab : 'movies';
     if (!keepFilters) { ui.phase = 0; ui.status = ''; ui.q = ''; }
-    $('.hero').hidden = ui.tab !== 'movies';
     document.querySelectorAll('#tabs a').forEach(a => { if (a.dataset.tab === ui.tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
     if (ui.tab === 'movies') renderBrowse('movie');
     else if (ui.tab === 'series') renderBrowse('series');
     else if (ui.tab === 'checklist') renderChecklist();
     else renderStats();
+    if (scroll) toTabs();
+  }
+
+  /* ---------------- logo fades as you scroll ---------------- */
+  function fadeLogo() {
+    const t = Math.min(window.scrollY / (window.innerHeight * 0.75), 1);   // 0 at the top .. 1 after 75% of a screen
+    $('#bgLogo').style.opacity = String(1 - t * 0.93);                      // ends slightly visible (7%)
   }
 
   /* ---------------- countdown ---------------- */
@@ -330,7 +424,9 @@
   /* ---------------- start ---------------- */
   function wire() {
     document.addEventListener('click', e => {
-      const t = e.target.closest('.tile, .card, .row'); if (t && t.dataset.slug) openDetail(t.dataset.slug);
+      const q = e.target.closest('[data-q]');
+      if (q) { quickAction(q); return; }
+      const t = e.target.closest('.tile, .row, .card-top, .card-title'); if (t && t.dataset.slug) openDetail(t.dataset.slug);
       const menu = $('#menu'); if (menu.open && !menu.contains(e.target)) menu.open = false;
     });
     $('#detail').addEventListener('click', e => { if (e.target === $('#detail')) $('#detail').close(); else onDetailClick(e); });
@@ -361,7 +457,8 @@
         const q = $('#q'); if (q) { e.preventDefault(); q.focus(); }
       }
     });
-    window.addEventListener('hashchange', () => route(false));
+    window.addEventListener('hashchange', () => route(false, true));
+    window.addEventListener('scroll', fadeLogo, { passive: true }); fadeLogo();
   }
 
   async function start() {
@@ -377,7 +474,8 @@
       return;
     }
     store = load();
-    wire(); renderSheet(); renderSummary(); route(false);
+    wire(); renderSheet(); renderSummary(); route(false, !!location.hash);
+    loadWikiPosters();
   }
   start();
 })();

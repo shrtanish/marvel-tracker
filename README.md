@@ -29,7 +29,9 @@ Every push to GitHub then updates the site automatically.
 
 ## Posters
 
-Posters come from [TMDB](https://www.themoviedb.org) (free). The repository stores only each poster's file name in `data/posters.json`; visitors' browsers load the images from TMDB. Until you add them, every title shows a coloured title card instead.
+Posters show up on their own: when the page loads, the browser asks Wikipedia for each title's poster and remembers the answer for 30 days. Nothing is stored in this repository and no key is needed. A title Wikipedia has no poster for shows a coloured title card.
+
+For higher quality, or to fix a wrong poster, you can also use [TMDB](https://www.themoviedb.org) (free). Posters listed in `data/posters.json` are used first. The repository stores only each poster's file name there; visitors' browsers load the images from TMDB.
 
 1. Make a free TMDB account and copy your **API Key** from <https://www.themoviedb.org/settings/api>.
 2. Pick one way to run the poster lookup:
@@ -41,6 +43,8 @@ Posters come from [TMDB](https://www.themoviedb.org) (free). The repository stor
      On Windows PowerShell: `$env:TMDB_API_KEY="your_key"; node scripts/fetch-posters.mjs`
 3. Titles the lookup could not match are listed in its output. Fix one by adding its correct path to `data/poster-overrides.json`, for example `{ "thor-2011": "/abc123.jpg" }`, and run it again.
 
+To point a title at a different Wikipedia article, add a `"wiki": "Article title"` field to its entry in `data/catalog.json`.
+
 ## Add a new movie or series
 
 Edit `data/catalog.json` and add an entry (copy an existing one). `type` is `movie` or `series`, `phase` is 1 to 6, `month` is the release month (it orders titles inside a year), and `slug` must be unique. For something not out yet set `"upcoming": true` and a `releaseDate`. Then run the poster lookup again.
@@ -50,8 +54,9 @@ Edit `data/catalog.json` and add an entry (copy an existing one). `type` is `mov
 | Path | What it is |
 | --- | --- |
 | `index.html`, `css/style.css`, `js/app.js` | The site |
+| `img/` | Marvel Studios logo and the Avengers artwork used on the first screen |
 | `data/catalog.json` | All titles with synopsis, genres, cast, runtime, seasons and so on |
-| `data/posters.json` | Poster file names from TMDB |
+| `data/posters.json` | Optional poster file names from TMDB |
 | `scripts/fetch-posters.mjs` | Poster lookup script |
 | `.github/workflows/posters.yml` | Runs the lookup on GitHub |
 | `vercel.json` | Security headers for Vercel |
@@ -61,5 +66,6 @@ Edit `data/catalog.json` and add an entry (copy an existing one). `type` is `mov
 
 - Release dates, runtimes and box office figures are approximate. Corrections are welcome.
 - Marvel Tracker is an unofficial fan project. It is not affiliated with, endorsed by or sponsored by Marvel, Marvel Studios or The Walt Disney Company. All titles, characters and artwork belong to their owners.
+- Poster images come from Wikipedia and TMDB; the Marvel Studios logo and the background artwork (by Ryan Meinerding) belong to Marvel.
 - This product uses the TMDB API but is not endorsed or certified by TMDB.
 - The code is MIT licensed (see `LICENSE`). That does not cover Marvel's or TMDB's material.
