@@ -35,13 +35,26 @@ button { cursor: pointer; }
 .brand { font-weight: 900; letter-spacing: 3px; font-size: 22px; text-decoration: none; white-space: nowrap; justify-self: start; }
 .brand span { background: #fff; color: var(--red); padding: 0 8px; margin-left: 8px; border-radius: 3px; }
 
-.doom { text-align: center; color: #fff; line-height: 1; }
-.doom-title { font-size: 11px; font-weight: 700; letter-spacing: 3px; margin-bottom: 4px; }
-.doom-units { display: flex; justify-content: center; align-items: flex-start; gap: 6px; }
+/* the countdown sits in a dark-green "Doom" panel inside the red bar */
+.doom {
+  text-align: center; color: #fff; line-height: 1; position: relative; overflow: hidden;
+  padding: 7px 22px 6px; border-radius: 10px;
+  background: radial-gradient(ellipse at 50% 120%, rgba(150,255,90,.28), transparent 65%), linear-gradient(180deg, #04130a, #0d3a1b);
+  border: 1px solid rgba(170,255,120,.5);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.35), 0 0 22px rgba(120,255,80,.38), inset 0 0 18px rgba(120,255,80,.14);
+}
+.doom::after {   /* a slow glint of green light across the panel */
+  content: ""; position: absolute; top: 0; bottom: 0; width: 38%; left: -45%;
+  background: linear-gradient(100deg, transparent, rgba(190,255,140,.22), transparent);
+  animation: glint 6s ease-in-out infinite;
+}
+@keyframes glint { 0%, 55% { left: -45%; } 100% { left: 115%; } }
+.doom-title { font-size: 11px; font-weight: 700; letter-spacing: 3px; margin-bottom: 4px; color: #c8ff8f; text-shadow: 0 0 10px rgba(140,255,80,.9); }
+.doom-units { display: flex; justify-content: center; align-items: flex-start; gap: 6px; position: relative; z-index: 1; }
 .doom-units div { display: flex; flex-direction: column; align-items: center; min-width: 50px; }
-.doom-units b { font-size: 26px; font-weight: 600; letter-spacing: 2px; font-variant-numeric: tabular-nums; }
-.doom-units span { font-size: 7.5px; font-weight: 700; letter-spacing: 1.5px; margin-top: 3px; opacity: .95; }
-.doom-units i { font-size: 22px; font-weight: 600; font-style: normal; line-height: 26px; }
+.doom-units b { font-size: 26px; font-weight: 600; letter-spacing: 2px; font-variant-numeric: tabular-nums; text-shadow: 0 0 12px rgba(150,255,90,.75); }
+.doom-units span { font-size: 7.5px; font-weight: 700; letter-spacing: 1.5px; margin-top: 3px; color: #b6f27a; }
+.doom-units i { font-size: 22px; font-weight: 600; font-style: normal; line-height: 26px; color: #8fe84f; text-shadow: 0 0 10px rgba(140,255,80,.8); }
 .doom.live .doom-units { display: none; }
 
 .menu { position: relative; justify-self: end; }
@@ -298,6 +311,7 @@ dialog::backdrop { background: #000a; }
   :root { --header-h: 118px; }
   .top { grid-template-columns: 1fr auto; padding: 8px 16px; row-gap: 6px; }
   .doom { grid-column: 1 / -1; grid-row: 2; }
+  .doom { padding: 6px 12px 5px; }
   .doom-units b { font-size: 20px; }
   .doom-units div { min-width: 40px; }
   .brand { font-size: 18px; letter-spacing: 2px; }
@@ -324,4 +338,5 @@ dialog::backdrop { background: #000a; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
+  .doom::after { display: none; }
 }

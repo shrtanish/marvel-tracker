@@ -8,7 +8,7 @@
   const DOOMSDAY = new Date('2026-12-18T05:00:00Z');   // Avengers: Doomsday, 05:00 UTC
   const IMG = 'https://image.tmdb.org/t/p/';
   const WIKI_API = 'https://en.wikipedia.org/w/api.php';
-  const WIKI_KEY = 'marvel-tracker-wiki-v1';
+  const WIKI_KEY = 'marvel-tracker-wiki-v2';   // v2: older saved answers were empty
   const WIKI_DAYS = 30;
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -91,7 +91,7 @@
   function wikiSave(t0) { try { localStorage.setItem(WIKI_KEY, JSON.stringify({ t: t0 || Date.now(), p: wikiPosters, m: wikiMiss })); } catch (e) { /* ignore */ } }
   const wikiOk = u => typeof u === 'string' && /^https:\/\/upload\.wikimedia\.org\//.test(u);
   async function wikiQuery(extra) {
-    const qs = new URLSearchParams({ action: 'query', format: 'json', origin: '*', prop: 'pageimages', piprop: 'thumbnail', pithumbsize: '500', ...extra });
+    const qs = new URLSearchParams({ action: 'query', format: 'json', origin: '*', prop: 'pageimages', piprop: 'thumbnail', pithumbsize: '500', pilicense: 'any', ...extra });
     const r = await fetch(`${WIKI_API}?${qs}`);
     if (!r.ok) throw new Error('wiki ' + r.status);
     return (await r.json()).query || {};
