@@ -201,6 +201,12 @@ main { position: relative; z-index: 1; max-width: var(--wrap); margin: 0 auto; p
 .controls input { width: 240px; }
 .controls input::placeholder { color: #77778a; }
 .count { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.count-row { display: flex; justify-content: space-between; align-items: center; gap: 10px 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.count-row .count { margin: 0; }
+.phase-btn { background: var(--panel); border: 1px solid var(--green); color: #6ee79a; border-radius: 8px; padding: 7px 14px; font-weight: 700; font-size: 13px; }
+.phase-btn:hover { background: #12351f; }
+.phase-btn.done { border-color: var(--line); color: var(--muted); font-weight: 600; }
+.phase-btn.done:hover { background: var(--panel-2); color: var(--text); }
 
 /* ---------- cards ---------- */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
@@ -218,6 +224,10 @@ main { position: relative; z-index: 1; max-width: var(--wrap); margin: 0 auto; p
 .card-top img, .pw img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
 .card:hover .card-top img { transform: scale(1.04); }
 .pw { position: absolute; inset: 0; }
+/* a series' wide title card is shown whole, centred on a dark card (real posters from TMDB still fill the card) */
+.pw.tc { background: radial-gradient(ellipse at 50% 55%, #15151d, #050508 75%); }
+.pw.tc img { object-fit: contain; padding: 6px; }
+.pw.tc .fallback { display: none; }
 .fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; gap: 8px; }
 .fallback b { font-weight: 800; font-size: 19px; line-height: 1.2; text-shadow: 0 2px 8px #0008; }
 .fallback span { font-size: 13px; opacity: .8; }
