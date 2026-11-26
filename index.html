@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marvel Tracker</title>
-  <meta name="description" content="A free checklist for every Marvel movie and series. Tick off what you have watched, rate it and see your progress. Saved in your browser.">
+  <meta name="description" content="A free checklist for every Marvel movie and series. Tick off what you have watched, rate it and see your progress. Works without an account; log in to keep it on every device.">
   <meta name="theme-color" content="#e62429">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
@@ -26,15 +26,29 @@
     </div>
   </div>
 
-  <details class="menu" id="menu">
-    <summary>Backup</summary>
-    <div class="menu-pop">
-      <p>Your checklist lives in this browser. Save a copy to keep it safe or move it to another device.</p>
-      <button type="button" id="btnExport">Download backup</button>
-      <button type="button" id="btnImport">Restore from backup</button>
-      <button type="button" id="btnReset" class="danger">Clear everything</button>
+  <div class="hright">
+    <!-- login / account area: shown only when js/config.js is filled in -->
+    <div class="acct" id="acct" hidden>
+      <button type="button" class="hbtn" id="btnLogin">Log in</button>
+      <button type="button" class="hbtn solid" id="btnSignup">Sign up</button>
+      <details class="menu" id="userMenu" hidden>
+        <summary><span id="meName">Account</span><span class="role-badge" id="meRole" hidden>ADMIN</span></summary>
+        <div class="menu-pop">
+          <button type="button" id="menuPw">Change password</button>
+          <button type="button" id="menuOut">Log out</button>
+        </div>
+      </details>
     </div>
-  </details>
+    <details class="menu" id="menu">
+      <summary aria-label="Backup">Backup</summary>
+      <div class="menu-pop">
+        <p>Save a copy of your checklist to keep it safe or to move it to another device.</p>
+        <button type="button" id="btnExport">Download backup</button>
+        <button type="button" id="btnImport">Restore from backup</button>
+        <button type="button" id="btnReset" class="danger">Clear everything</button>
+      </div>
+    </details>
+  </div>
 </header>
 
 <!-- big logo and Avengers artwork: fixed behind everything, fades out as you scroll (see js/app.js) -->
@@ -57,7 +71,10 @@
     </div>
 
     <div class="hero-foot">
-      <p class="summary" id="summary" aria-live="polite"></p>
+      <div class="hero-msg">
+        <p class="summary" id="summary" aria-live="polite"></p>
+        <p class="acct-note" id="acctNote" hidden></p>
+      </div>
       <div class="hero-actions">
         <button type="button" class="btn primary" id="btnNext">Next up</button>
         <button type="button" class="btn" id="btnSurprise">Surprise me</button>
@@ -71,6 +88,7 @@
     <a href="#series" data-tab="series">Series</a>
     <a href="#checklist" data-tab="checklist">My Checklist</a>
     <a href="#stats" data-tab="stats">Stats</a>
+    <a href="#admin" data-tab="admin" id="adminTab" hidden>Admin</a>
   </nav>
 
   <section id="view" aria-live="polite"></section>
@@ -79,13 +97,17 @@
 <footer class="foot">
   <p>Marvel Tracker is an unofficial fan project and is not affiliated with, endorsed by or sponsored by Marvel, Marvel Studios or The Walt Disney Company. All titles, characters, logos and artwork belong to their owners. Background artwork by Ryan Meinerding for Marvel Studios.</p>
   <p>Poster images are shown from <a href="https://www.themoviedb.org" target="_blank" rel="noopener">TMDB</a> and <a href="https://en.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a> and belong to their studios. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-  <p>Release dates and box office figures are approximate. Your checklist never leaves your browser.</p>
+  <p>Release dates and box office figures are approximate. Without an account your checklist stays in your browser; with an account it is saved to your account.</p>
 </footer>
 
 <dialog id="detail" aria-labelledby="dTitle"></dialog>
+<dialog id="authDlg" aria-labelledby="aTitle"></dialog>
 <input type="file" id="importFile" accept="application/json,.json" hidden>
 <div id="toast" role="status" aria-live="polite"></div>
 
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
 <script src="js/app.js"></script>
+<script src="js/account.js"></script>
 </body>
 </html>

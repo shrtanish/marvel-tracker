@@ -26,6 +26,9 @@
   let wikiMiss = [];     // slugs Wikipedia had no poster for (not asked again until the cache expires)
   let store = emptyStore();
   let memoryCopy = null; // used if the browser blocks localStorage
+  let account = null;    // { id, name, role } while someone is logged in (js/account.js); otherwise the guest checklist is used
+  const hooks = {};      // hooks.onSave(store) is called after every change while logged in
+  const views = {};      // extra tabs registered by js/account.js (the admin panel)
 
   function emptyStore() { return { watched: {}, want: {}, rating: {}, note: {} }; }
 
@@ -44,6 +47,11 @@
     return memoryCopy ? clean(memoryCopy) : emptyStore();
   }
   function save() {
+    if (account) {   // logged in: keep a copy here and let js/account.js send it to the account
+      try { localStorage.setItem(KEY + '-u-' + account.id, JSON.stringify(store)); } catch (e) { /* ignore */ }
+      if (hooks.onSave) hooks.onSave(store);
+      return;
+    }
     try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) { memoryCopy = JSON.parse(JSON.stringify(store)); }
   }
 
@@ -371,12 +379,14 @@
   }
   function route(keepFilters, scroll) {
     const tab = (location.hash || '#movies').slice(1);
-    ui.tab = ['movies', 'series', 'checklist', 'stats'].includes(tab) ? tab : 'movies';
+    ui.tab = ['movies', 'series', 'checklist', 'stats', 'admin'].includes(tab) ? tab : 'movies';
+    if (ui.tab === 'admin' && !(account && account.role === 'admin' && views.admin)) ui.tab = 'movies';
     if (!keepFilters) { ui.phase = 0; ui.status = ''; ui.q = ''; }
     document.querySelectorAll('#tabs a').forEach(a => { if (a.dataset.tab === ui.tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
     if (ui.tab === 'movies') renderBrowse('movie');
     else if (ui.tab === 'series') renderBrowse('series');
     else if (ui.tab === 'checklist') renderChecklist();
+    else if (ui.tab === 'admin') views.admin(view());
     else renderStats();
     if (scroll) toTabs();
   }
@@ -427,7 +437,7 @@
       const q = e.target.closest('[data-q]');
       if (q) { quickAction(q); return; }
       const t = e.target.closest('.tile, .row, .card-top, .card-title'); if (t && t.dataset.slug) openDetail(t.dataset.slug);
-      const menu = $('#menu'); if (menu.open && !menu.contains(e.target)) menu.open = false;
+      document.querySelectorAll('details.menu[open]').forEach(m => { if (!m.contains(e.target)) m.open = false; });
     });
     $('#detail').addEventListener('click', e => { if (e.target === $('#detail')) $('#detail').close(); else onDetailClick(e); });
     $('#detail').addEventListener('input', e => {
@@ -474,8 +484,28 @@
       return;
     }
     store = load();
-    wire(); renderSheet(); renderSummary(); route(false, !!location.hash);
+    wire(); renderSheet(); renderSummary(); route(false, /^#(movies|series|checklist|stats|admin)$/.test(location.hash));
     loadWikiPosters();
+    window.MTApp.isReady = true; document.dispatchEvent(new Event('mt-ready'));
   }
+
+  /* ---------------- hooks for js/account.js (login, saving to an account, admin tab) ---------------- */
+  const redraw = () => { const d = $('#detail'); if (d.open) d.close(); renderSheet(); renderSummary(); route(true); };
+  window.MTApp = {
+    isReady: false, toast, esc, hooks,
+    registerView: (name, fn) => { views[name] = fn; },
+    guestStore: () => load(),                                   // the checklist kept in this browser by someone who is not logged in
+    cachedStore: id => { try { return JSON.parse(localStorage.getItem(KEY + '-u-' + id)); } catch (e) { return null; } },
+    isEmpty: o => !o || !Object.keys(clean(o).watched).length && !Object.keys(clean(o).want).length && !Object.keys(clean(o).rating).length && !Object.keys(clean(o).note).length,
+    setAccount(acc, data, push) { account = acc; store = clean(data); if (push) save(); redraw(); },
+    setRole(role) { if (account) account.role = role; },
+    clearAccount() {   // logged out: forget the account's copy on this device and go back to the guest checklist
+      if (account) { try { localStorage.removeItem(KEY + '-u-' + account.id); } catch (e) { /* ignore */ } }
+      account = null; store = load(); redraw();
+    },
+    dropGuest() { memoryCopy = null; try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ } },   // the guest checklist now lives in the account
+    currentStore: () => store,
+    redraw
+  };
   start();
 })();

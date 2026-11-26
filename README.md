@@ -6,7 +6,8 @@ A free checklist for every Marvel movie and series. Tick off what you have watch
 - **Contact sheet** on the home screen: one tile per title in release order, coloured by what you have watched
 - **My checklist** (up next, want to watch, watched) and **Stats** (progress by phase, favourite genres and heroes, your ratings)
 - **Doomsday countdown** to *Avengers: Doomsday* (18 December 2026)
-- **No account and no server.** Your checklist is saved in your browser. Use **Backup** to download it or move it to another device.
+- **Works without an account.** Guests browse and tick titles freely; the checklist is saved in the browser. Use **Backup** to download it or move it to another device.
+- **Optional accounts** (sign up, log in, forgot password): the checklist is saved to the account and follows you to any device. The first account becomes the **admin**, who gets an **Admin** tab to block, unblock, promote or delete users.
 - **57 released titles** (38 movies, 19 series) plus *Avengers: Doomsday*, up to November 2026
 
 It is a plain HTML, CSS and JavaScript site. There is nothing to build.
@@ -26,6 +27,28 @@ Open the address it prints. (Opening `index.html` directly does not work because
 3. Framework preset: **Other**. Leave the build command and output directory empty. Click **Deploy**.
 
 Every push to GitHub then updates the site automatically.
+
+## Accounts (login, sign up and the admin panel)
+
+Accounts use [Supabase](https://supabase.com) (free plan). Until you fill in `js/config.js` the site works as a plain checklist and shows no login buttons.
+
+1. Create a free project at supabase.com. Pick any name and region and save the database password somewhere.
+2. Open **SQL Editor > New query**, paste the whole of `supabase/setup.sql`, and click **Run**. It creates the tables, the privacy rules and the admin functions.
+3. Open **Authentication > Providers > Email** and switch **Confirm email** off. (Leave it on if you want people to confirm by email first; the site handles both.)
+4. Open **Authentication > URL Configuration**. Set **Site URL** to your website address, for example `https://marvel-tracker-brown.vercel.app`, and add the same address under **Redirect URLs**. Password-reset emails use it.
+5. Open **Project Settings > API** and copy the **Project URL** and the **anon public** key.
+6. Paste them into `js/config.js`:
+   ```js
+   window.MT_CONFIG = { supabaseUrl: 'https://xxxx.supabase.co', supabaseKey: 'eyJ...' };
+   ```
+   Commit the file. Both values are meant to be public. The rules in `setup.sql` decide who can see what, and the `service_role` key must never be put in the site.
+7. Open your site and **sign up first**. The first account is the admin.
+
+How it behaves:
+- Guests can browse and tick titles. When they log in for the first time, the checklist from that browser moves into their account.
+- A signed-in checklist is saved a moment after every change, and loads on any device.
+- Admins see all accounts with their progress. **Block** signs a person out and stops them logging in, **Make admin** and **Remove admin** change the role, **Delete** removes the account and its checklist. You cannot change your own account.
+- Supabase's free plan sends only a few auth emails an hour. For a real launch, add your own email sender under **Authentication > SMTP**.
 
 ## Posters
 
@@ -56,6 +79,8 @@ Edit `data/catalog.json` and add an entry (copy an existing one). `type` is `mov
 | `index.html`, `css/style.css`, `js/app.js` | The site |
 | `img/` | Marvel Studios logo and the Avengers artwork used on the first screen |
 | `data/catalog.json` | All titles with synopsis, genres, cast, runtime, seasons and so on |
+| `js/auth.js`, `js/account.js`, `js/config.js` | Login, saving to an account, the admin tab and the two Supabase settings |
+| `supabase/setup.sql` | Database tables, privacy rules and admin functions (run once in Supabase) |
 | `data/posters.json` | Optional poster file names from TMDB |
 | `scripts/fetch-posters.mjs` | Poster lookup script |
 | `.github/workflows/posters.yml` | Runs the lookup on GitHub |
