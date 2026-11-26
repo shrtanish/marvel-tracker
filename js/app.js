@@ -65,15 +65,17 @@
     clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
   }
   function wireImages(root) {
-    root.querySelectorAll('img').forEach(i => i.addEventListener('error', () => i.remove(), { once: true }));
+    root.querySelectorAll('img').forEach(i => i.addEventListener('error', () => { const w = i.parentElement; i.remove(); if (w) w.classList.remove('tc'); }, { once: true }));
   }
+  // Wikipedia's picture for a series is usually its wide title card, not a poster, so it is shown whole on a dark card
+  const isTitleCard = t => t.type === 'series' && !posters[t.slug];
   function posterUrl(slug, big) {
     if (posters[slug]) return `${IMG}${big ? 'w500' : 'w342'}${posters[slug]}`;
     return wikiPosters[slug] || '';
   }
   function posterHtml(t, big) {
     const u = posterUrl(t.slug, big);
-    return `<div class="pw" data-pslug="${t.slug}" data-big="${big ? 1 : ''}">
+    return `<div class="pw${u && isTitleCard(t) ? ' tc' : ''}" data-pslug="${t.slug}" data-big="${big ? 1 : ''}">
       <div class="fallback phase-${t.phase}"><b>${esc(t.name)}</b><span>${t.year}</span></div>
       ${u ? `<img src="${esc(u)}" alt="${big ? esc(t.name) + ' poster' : ''}" loading="lazy" decoding="async">` : ''}</div>`;
   }
@@ -83,7 +85,8 @@
       const t = BY[w.dataset.pslug], u = t && posterUrl(t.slug, w.dataset.big);
       if (!u) return;
       const i = new Image(); i.alt = w.dataset.big ? t.name + ' poster' : ''; i.decoding = 'async'; i.src = u;
-      i.addEventListener('error', () => i.remove(), { once: true });
+      i.addEventListener('error', () => { i.remove(); w.classList.remove('tc'); }, { once: true });
+      if (isTitleCard(t)) w.classList.add('tc');
       w.appendChild(i);
     });
   }
@@ -212,14 +215,37 @@
           </select>
         </div>
       </div>
-      <p class="count" id="count"></p>
+      <div class="count-row"><p class="count" id="count"></p><button type="button" class="phase-btn" id="phaseBtn"></button></div>
       <div class="grid" id="grid"></div>`;
     $('#q').value = ui.q; $('#status').value = ui.status; $('#sort').value = ui.sort;
     view().querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => { ui.phase = +c.dataset.phase; fillGrid(); }));
     $('#q').addEventListener('input', e => { ui.q = e.target.value; fillGrid(); });
     $('#status').addEventListener('change', e => { ui.status = e.target.value; fillGrid(); });
     $('#sort').addEventListener('change', e => { ui.sort = e.target.value; fillGrid(); });
+    $('#phaseBtn').addEventListener('click', markScope);
     fillGrid();
+  }
+
+  /* Mark a whole phase (movies and series together) as watched, or clear it again */
+  const scopeTitles = () => released().filter(t => !ui.phase || t.phase === ui.phase);
+  const scopeName = () => ui.phase ? `Phase ${ui.phase}` : 'every phase';
+  function updatePhaseBtn() {
+    const b = $('#phaseBtn'); if (!b) return;
+    const left = scopeTitles().filter(t => !store.watched[t.slug]).length;
+    b.classList.toggle('done', !left);
+    b.textContent = left ? `✓ Mark ${ui.phase ? 'Phase ' + ui.phase : 'everything'} as watched (${left})` : `${ui.phase ? 'Phase ' + ui.phase : 'Everything'} complete · Undo`;
+    b.title = 'Applies to movies and series together';
+  }
+  function markScope() {
+    const scope = scopeTitles(), left = scope.filter(t => !store.watched[t.slug]), on = left.length > 0;
+    const todo = on ? left : scope.filter(t => store.watched[t.slug]); if (!todo.length) return;
+    const mv = todo.filter(t => t.type === 'movie').length, sr = todo.length - mv;
+    const msg = on ? `Mark ${todo.length} titles in ${scopeName()} as watched (${mv} movies and ${sr} series)? Titles you already watched keep their dates.`
+                   : `Mark all ${todo.length} watched titles in ${scopeName()} as not watched? Your ratings and notes stay.`;
+    if (!confirm(msg)) return;
+    const d = today();
+    todo.forEach(t => { if (on) { store.watched[t.slug] = d; delete store.want[t.slug]; } else delete store.watched[t.slug]; });
+    afterChange(); toast(on ? `${scopeName()} marked as watched` : `${scopeName()} cleared`);
   }
 
   function fillGrid() {
@@ -246,6 +272,7 @@
     items.sort(by[ui.sort] || by.release);
     view().querySelectorAll('.chip').forEach(c => c.classList.toggle('on', +c.dataset.phase === ui.phase));
     $('#count').textContent = `${items.length} of ${all.length} ${type === 'movie' ? 'movies' : 'series'}`;
+    updatePhaseBtn();
     const grid = $('#grid');
     grid.innerHTML = items.length ? items.map(card).join('') :
       `<div class="empty" style="grid-column:1/-1"><b>Nothing matches</b>Clear the search or pick another phase or status.</div>`;
