@@ -3,6 +3,6 @@
    (see "Accounts" in README.md). Both values are meant to be public: the database rules in supabase/setup.sql
    decide who can see what. */
 window.MT_CONFIG = {
-  supabaseUrl: '',   // for example https://abcdxyzcompany.supabase.co
-  supabaseKey: ''    // the "anon" / "publishable" key
+  supabaseUrl: 'https://ringgjgnuicwpljlybly.supabase.co',   // for example https://abcdxyzcompany.supabase.co
+  supabaseKey: 'sb_publishable_YQf_y7tAs4B-dBRKGwbJHQ_b2Dzm4Bo'    // the "anon" / "publishable" key
 };
